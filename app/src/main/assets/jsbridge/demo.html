@@ -66,12 +66,13 @@
                 //call native method
                 window.WebViewJavascriptBridge.callHandler(
                     'toast'
-                    , {'msg': '中文测试'}
+                    , {'msg': '中文测试'+i}
                     , function(responseData) {
-                        console.log('return->['+ i++ +']'+responseData);
+                        console.log('return->['+ i +']'+responseData);
                     }
                 );
-                if(i>500){
+                i++;
+                if(i>5){
                     clearInterval(first);
                 }
             }, 10);
